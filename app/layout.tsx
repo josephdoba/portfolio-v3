@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Red_Hat_Display } from "next/font/google";
 import { Space_Mono } from "next/font/google";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import "./globals.css";
 
 const redHatDisplay = Red_Hat_Display({
@@ -35,6 +36,7 @@ export default function RootLayout({
           {children}
         </div>
       </body>
+      <Footer />
     </html>
   );
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Red_Hat_Display } from "next/font/google";
 import { Space_Mono } from "next/font/google";
+import Navbar from "../components/Navbar";
 import "./globals.css";
 
 const redHatDisplay = Red_Hat_Display({
@@ -26,10 +27,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Navbar />
       <body
         className={`${redHatDisplay.variable} ${spaceMono.variable}  antialiased`}
       >
-        {children}
+        <div>
+          {children}
+        </div>
       </body>
     </html>
   );

@@ -42,7 +42,7 @@ export default function Home() {
             Documentation
           </a>
         </div>
-      </main>
-    </div>
+      </main >
+    </div >
   );
 }

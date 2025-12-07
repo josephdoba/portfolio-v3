@@ -27,8 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`
-          ${redHatDisplay.variable} ${spaceMono.variable}  antialiased`}
+        className={`${redHatDisplay.variable} ${spaceMono.variable}  antialiased`}
       >
         {children}
       </body>

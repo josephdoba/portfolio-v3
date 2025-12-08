@@ -2,14 +2,14 @@ import Link from 'next/link';
 
 export default function Footer() {
     return (
-        <footer className="border-t border-gray-200 py-8 mt-auto">
+        <footer className="border-t border-gray-200 py-8 mt-auto bg-[var(--color-blue)] font-sans">
             <div className="container mx-auto px-4">
                 <div className="flex justify-center items-center gap-6">
                     <a
-                        href="https://linkedin.com/in/yourusername"
+                        href="https://www.linkedin.com/in/joseph-aj-doba/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-gray-600 hover:text-gray-900 transition-colors"
+                        className="text-[var(--color-white)] hover:text-[var(--color-orange-alt)] transition-colors"
                     >
                         LinkedIn
                     </a>
@@ -17,14 +17,14 @@ export default function Footer() {
                         href="https://github.com/josephdoba"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-gray-600 hover:text-gray-900 transition-colors"
+                        className="text-[var(--color-white)] hover:text-[var(--color-orange-alt)] transition-colors"
                     >
                         GitHub
                     </a>
 
                     <Link
                         href="/contact"
-                        className="text-gray-600 hover:text-gray-900 transition-colors"
+                        className="text-[var(--color-white)] hover:text-[var(--color-orange-alt)] transition-colors"
                     >
                         Email
                     </Link>

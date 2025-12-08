@@ -28,15 +28,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Navbar />
+
       <body
         className={`${redHatDisplay.variable} ${spaceMono.variable}  antialiased`}
       >
         <div>
+          <Navbar />
           {children}
+          <Footer />
         </div>
       </body>
-      <Footer />
+      
     </html>
   );
 }

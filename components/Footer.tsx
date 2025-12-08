@@ -14,7 +14,7 @@ export default function Footer() {
                         LinkedIn
                     </a>
                     <a
-                        href="https://github.com/yourusername"
+                        href="https://github.com/josephdoba"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-gray-600 hover:text-gray-900 transition-colors"

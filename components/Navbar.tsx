@@ -4,7 +4,7 @@ export default function Navbar() {
     return (
         <div className="fixed top-0 w-full backdrop-blur-md z-50 mx-auto px-6 py-4 border-b border-gray-200 bg-[var(--color-blue)]">
             <div className="flex items-center justify-between">
-                <ul className="flex items-center gap-8  ">
+                <ul className="flex items-center gap-8 font-sans">
                     <li>
                         <Link href="/" className="text-[var(--color-white)] hover:text-[var(--color-orange-alt)] transition-colors">
                             Home

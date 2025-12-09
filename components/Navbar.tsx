@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Navbar() {
     return (
-        <div className="px-[15%] fixed top-0 w-full backdrop-blur-md z-50 mx-auto px-6 py-4 bg-[var(--color-blue)] font-sans">
+        <div className="px-[15%] fixed top-[-1] w-full backdrop-blur-md z-50 mx-auto px-6 py-4 bg-[var(--color-blue)] font-sans">
             <div className="flex items-center justify-between">
                 <Link href="/" className="text-[var(--color-white)] hover:text-[var(--color-orange-alt)] transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-7">

@@ -6,6 +6,7 @@
   --color-blue: #0d6efd;
   --color-orange: #f66308;
   --color-orange-alt: #fd9c0d;
+  --color-red: #ff0000;
 }
 
 @theme inline {

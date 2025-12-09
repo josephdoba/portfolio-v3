@@ -2,7 +2,7 @@ import ServicesCard from "./ServicesCard"
 
 export default function ServicesSection () {
   return (
-<div className="items-center justify-center font-sans border-1 border-solid border-[var(--color-red)] bg-(--color-alt-white)">
+<div className="items-center justify-center font-sans border-1 border-solid border-[var(--color-red)] bg-(--color-alt-white) width">
       <section className="w-full px-16 ">
          {/* max-w-3xl flex-col items-center justify-between py-32 sm:items-start */}
         <h1 className="text-3xl leading-1 tracking-tight">

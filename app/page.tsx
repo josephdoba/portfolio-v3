@@ -4,7 +4,8 @@ import BlogLatest from "@/components/BlogLatest";
 
 export default function Home() {
   return (
-    <div className="px-[15%]">
+    <div className="w-full">
+       {/* px-[15%] */}
 
       {/* <canvas class="vanta-canvas" "></canvas> */}
       <HeroBanner/>

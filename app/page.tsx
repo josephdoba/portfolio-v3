@@ -4,11 +4,13 @@ import BlogLatest from "@/components/BlogLatest";
 
 export default function Home() {
   return (
-    <div>
+    <div className="px-[15%]">
+
+      {/* <canvas class="vanta-canvas" "></canvas> */}
       <HeroBanner/>
       <ServicesSection/>
       <BlogLatest/>
-      
+
     </div>
   );
 }

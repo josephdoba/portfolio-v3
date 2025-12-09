@@ -3,7 +3,7 @@
 
 export default function HeroBanner() {
   return (
-    <div className="flex items-center justify-left font-sans">
+    <div className="flex items-center justify-left font-sans  border-1 border-solid border-[var(--color-red)]">
       <main className=" w-full max-w-3xl flex-col items-center justify-between py-32 px-16 sm:items-start">
       
         <div className="">

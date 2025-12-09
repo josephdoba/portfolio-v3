@@ -3,11 +3,9 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 
-
-type WaveNode = {
+type Particle = {
   mesh: THREE.Mesh;
-  baseX: number;
-  baseZ: number;
+  velocity: THREE.Vector2;
 };
 
 export default function HeroScene() {
@@ -19,90 +17,145 @@ export default function HeroScene() {
 
     // Scene & camera
     const scene = new THREE.Scene();
-    // scene.background = new THREE.Color("#020617"); // dark slate-ish
-
     const width = container.clientWidth;
     const height = container.clientHeight || 260;
 
     const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100);
-    camera.position.set(0, 3, 9);
+    camera.position.set(0, 0, 5);
     camera.lookAt(0, 0, 0);
 
-    // Renderer
-    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    // Renderer (transparent)
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(width, height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    renderer.setClearColor(0x000000,0);
+    renderer.setClearColor(0x000000, 0); // full transparency
     container.appendChild(renderer.domElement);
 
-
-    // Lights
-    const ambient = new THREE.AmbientLight(0xffffff, 0.35);
+    // Lights (subtle)
+    const ambient = new THREE.AmbientLight(0xffffff, 0.4);
     scene.add(ambient);
 
-    const dir = new THREE.DirectionalLight(0xffffff, 0.8);
-    dir.position.set(4, 8, 6);
+    const dir = new THREE.DirectionalLight(0xffffff, 0.6);
+    dir.position.set(3, 5, 6);
     scene.add(dir);
 
-    // Grid of wave nodes
-    const nodeGeom = new THREE.SphereGeometry(0.08, 12, 12);
-    const nodeMat = new THREE.MeshStandardMaterial({
-      color: 0x0d6efd, // your blue
+    // --- Particles setup ---
+    const particleCount = 50;       // tweak: more/less dots
+    const areaX = 7;                // horizontal radius of area
+    const areaY = 4;                // vertical radius of area
+    const maxSpeed = 0.01;          // max drift speed
+
+    const particleGeom = new THREE.SphereGeometry(0.06, 8, 8);
+    const particleMat = new THREE.MeshStandardMaterial({
+      color: 0x0d6efd,        // your blue
       emissive: 0x0d6efd,
-      emissiveIntensity: 0.55,
-      metalness: 0.5,
+      emissiveIntensity: 0.7,
+      metalness: 0.4,
       roughness: 0.3,
     });
 
-    const waveNodes: WaveNode[] = [];
-    const gridSize = 24; // 12x12 nodes
-    const spacing = 0.8; // distance between nodes
+    const particles: Particle[] = [];
 
-    for (let ix = 0; ix < gridSize; ix++) {
-      for (let iz = 0; iz < gridSize; iz++) {
-        const x = (ix - gridSize / 2) * spacing;
-        const z = (iz - gridSize / 2) * spacing;
+    for (let i = 0; i < particleCount; i++) {
+      const mesh = new THREE.Mesh(particleGeom, particleMat);
+      const x = (Math.random() - 0.5) * 2 * areaX;
+      const y = (Math.random() - 0.5) * 2 * areaY;
+      mesh.position.set(x, y, 0);
+      scene.add(mesh);
 
-        const node = new THREE.Mesh(nodeGeom, nodeMat);
-        node.position.set(x, 0, z);
-        scene.add(node);
+      const angle = Math.random() * Math.PI * 2;
+      const speed = maxSpeed * (0.3 + Math.random() * 0.7); // avoid zero-speed
+      const velocity = new THREE.Vector2(
+        Math.cos(angle) * speed,
+        Math.sin(angle) * speed
+      );
 
-        waveNodes.push({ mesh: node, baseX: x, baseZ: z });
-      }
+      particles.push({ mesh, velocity });
     }
 
-    // Optional: subtle ground disk under the nodes
-    const planeGeom = new THREE.CircleGeometry(gridSize * spacing * 0.9, 48);
-    const planeMat = new THREE.MeshBasicMaterial({
-      color: 0x000000,
-      transparent: true,
-      opacity: 0.0,
-    });
-    const plane = new THREE.Mesh(planeGeom, planeMat);
-    plane.rotation.x = -Math.PI / 2;
-    plane.position.y = -0.02;
-    scene.add(plane);
+    // --- Connection lines ---
+const baseColor = new THREE.Color(0x334155);
+
+const lineMat = new THREE.LineBasicMaterial({
+  transparent: true,
+  opacity: 0.1,
+  vertexColors: true // allow per-vertex colors
+});
+
+const lineGeom = new THREE.BufferGeometry();
+const lineSegments = new THREE.LineSegments(lineGeom, lineMat);
+scene.add(lineSegments);
+
+// let lines reach a bit farther, but fade out
+const maxConnectionDist = 3;
+const maxConnectionDistSq = maxConnectionDist * maxConnectionDist;
+
 
     let frameId = 0;
 
     const animate = () => {
       frameId = requestAnimationFrame(animate);
 
-      const t = performance.now() * 0.0001;
+      // Move particles
+      particles.forEach(({ mesh, velocity }) => {
+        mesh.position.x += velocity.x;
+        mesh.position.y += velocity.y;
 
-      // Slow rotation of the whole grid
-      scene.rotation.y = t * 0.05;
-
-      const waveSpeed = 0.2;
-      const waveScale = 20.3;
-
-      waveNodes.forEach(({ mesh, baseX, baseZ }) => {
-        const dist = Math.sqrt(baseX * baseX + baseZ * baseZ);
-        const phase = dist * 0.8; // offset based on distance from center
-
-        const y = Math.sin(t * waveSpeed + phase) * waveScale;
-        mesh.position.y = y;
+        // Bounce off soft bounds
+        if (mesh.position.x > areaX || mesh.position.x < -areaX) {
+          velocity.x *= -1;
+        }
+        if (mesh.position.y > areaY || mesh.position.y < -areaY) {
+          velocity.y *= -1;
+        }
       });
+
+      // Build connection line positions + per-segment colors
+const positions: number[] = [];
+const colors: number[] = [];
+
+for (let i = 0; i < particleCount; i++) {
+  const a = particles[i].mesh.position;
+  for (let j = i + 1; j < particleCount; j++) {
+    const b = particles[j].mesh.position;
+
+    const dx = a.x - b.x;
+    const dy = a.y - b.y;
+    const distSq = dx * dx + dy * dy;
+
+    if (distSq <= maxConnectionDistSq) {
+      const dist = Math.sqrt(distSq);
+      const t = dist / maxConnectionDist;      // 0 (close) → 1 (max distance)
+      const strength = 1 - t;                  // 1 (close) → 0 (far)
+
+      // base color scaled by strength
+      const r = baseColor.r * strength;
+      const g = baseColor.g * strength;
+      const bCol = baseColor.b * strength;
+
+      positions.push(a.x, a.y, a.z, b.x, b.y, b.z);
+
+      // same color at both ends of the segment
+      colors.push(r, g, bCol, r, g, bCol);
+    }
+  }
+}
+
+lineGeom.setAttribute(
+  "position",
+  new THREE.Float32BufferAttribute(positions, 3)
+);
+lineGeom.setAttribute(
+  "color",
+  new THREE.Float32BufferAttribute(colors, 3)
+);
+lineGeom.computeBoundingSphere();
+
+
+      // Update line geometry
+      const positionAttr = new THREE.Float32BufferAttribute(positions, 3);
+      lineGeom.setAttribute("position", positionAttr);
+      lineGeom.computeBoundingSphere();
 
       renderer.render(scene, camera);
     };
@@ -120,16 +173,16 @@ export default function HeroScene() {
 
     window.addEventListener("resize", handleResize);
 
-    // Cleanup on unmount
+    // Cleanup
     return () => {
       cancelAnimationFrame(frameId);
       window.removeEventListener("resize", handleResize);
 
       renderer.dispose();
-      nodeGeom.dispose();
-      nodeMat.dispose();
-      planeGeom.dispose();
-      planeMat.dispose();
+      particleGeom.dispose();
+      particleMat.dispose();
+      lineGeom.dispose();
+      lineMat.dispose();
 
       if (renderer.domElement.parentElement === container) {
         container.removeChild(renderer.domElement);

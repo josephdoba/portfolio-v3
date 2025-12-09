@@ -40,18 +40,18 @@ export default function HeroScene() {
     scene.add(dir);
 
     // --- Particles setup ---
-    const particleCount = 50;       // tweak: more/less dots
-    const areaX = 7;                // horizontal radius of area
-    const areaY = 4;                // vertical radius of area
-    const maxSpeed = 0.01;          // max drift speed
+    const particleCount = 60;
+    const areaX = 5;
+    const areaY = 5;      
+    const maxSpeed = 0.01;
 
     const particleGeom = new THREE.SphereGeometry(0.06, 8, 8);
     const particleMat = new THREE.MeshStandardMaterial({
-      color: 0x0d6efd,        // your blue
+      color: 0x0d6efd, // blue
       emissive: 0x0d6efd,
-      emissiveIntensity: 0.7,
-      metalness: 0.4,
-      roughness: 0.3,
+      emissiveIntensity: 1.7,
+      metalness: 0.8,
+      roughness: 0.2,
     });
 
     const particles: Particle[] = [];
@@ -64,7 +64,7 @@ export default function HeroScene() {
       scene.add(mesh);
 
       const angle = Math.random() * Math.PI * 2;
-      const speed = maxSpeed * (0.3 + Math.random() * 0.7); // avoid zero-speed
+      const speed = maxSpeed * (0.3 + Math.random() * 0.7);
       const velocity = new THREE.Vector2(
         Math.cos(angle) * speed,
         Math.sin(angle) * speed
@@ -74,21 +74,21 @@ export default function HeroScene() {
     }
 
     // --- Connection lines ---
-const baseColor = new THREE.Color(0x334155);
+      const baseColor = new THREE.Color(0x334155);
 
-const lineMat = new THREE.LineBasicMaterial({
-  transparent: true,
-  opacity: 0.1,
-  vertexColors: true // allow per-vertex colors
-});
+      const lineMat = new THREE.LineBasicMaterial({
+        transparent: true,
+        opacity: 0.1,
+        vertexColors: true // allow per-vertex colors
+      });
 
-const lineGeom = new THREE.BufferGeometry();
-const lineSegments = new THREE.LineSegments(lineGeom, lineMat);
-scene.add(lineSegments);
+      const lineGeom = new THREE.BufferGeometry();
+      const lineSegments = new THREE.LineSegments(lineGeom, lineMat);
+      scene.add(lineSegments);
 
-// let lines reach a bit farther, but fade out
-const maxConnectionDist = 3;
-const maxConnectionDistSq = maxConnectionDist * maxConnectionDist;
+      // let lines reach a bit farther, but fade out
+      const maxConnectionDist = 3;
+      const maxConnectionDistSq = maxConnectionDist * maxConnectionDist;
 
 
     let frameId = 0;

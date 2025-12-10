@@ -8,12 +8,11 @@ export default function ServicesSection () {
           <ul className="grid gap-6 md:grid-cols-2 items-stretch p-[8%]">
             <li className="h-full">
               <ServicesCard
+// Wireshark, Nmap, Kali Linux, OpenVAS, NIST, MITRE ATT&CK, OWASP Top 10, and ISO 27001
               title="Cyber Security"
               subtitle="Practical security for small and medium-sized businesses."
               points={[
-                "Security assessments and clear, non-jargon reports.",
-                "Hardening of accounts, access, and configurations.",
-                "Web app checks for common vulnerabilities."
+                ""
               ]}
             />
             </li>

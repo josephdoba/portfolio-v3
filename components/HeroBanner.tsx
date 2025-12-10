@@ -14,7 +14,7 @@ export default function HeroBanner() {
         <main className="max-w-4xl flex-col items-center justify-between px-12 sm: items-start backdrop-blur-lg">
           {/* max-w-3xl flex-col items-center justify-between py-32 px-16 sm:items-start */}
             <h1 className="text-5xl leading-tight tracking-tight p-8">
-              Joseph AJ Doba
+              Joseph Doba
             </h1>
             <h2 className="text-xl font-mono p-8">
               Hello! I’m a freelance <strong>Web Developer</strong> and <strong>Cyber Security Specialist</strong>. I build and secure websites for small to medium-sized businesses.

@@ -1,11 +1,23 @@
-export default function ServicesCard () {
+type ServicesCardProps = {
+  title: string;
+  subtitle?: string;
+  points: string[];
+};
+
+export default function ServicesCard ({title, subtitle, points}: ServicesCardProps) {
   return (
-<div className=" items-center justify-center bg-zinc-90 font-sans drop-shadow">
-      <section className="w-full max-w-3xl flex-col items-center justify-between py-24 px-16 sm:items-start border-1">
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left drop-shadow-lg">
-          <h1 className="max-w-xs text-4xl leading-1 tracking-tight">
-            card.
+<div className=" items-center justify-center bg-zinc-90 font-sans">
+      <section className="w-full max-w-3xl flex-col items-center justify-between py-24 px-16 sm:items-start border-1 bg-[var(--color-white)] hover:shadow-lg transform opacity-99 hover:opacity-100 hover:scale-102 transition-all duration-250 ease-in-out">
+        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
+          <h1>
+            {title}
           </h1>
+          <h2>
+            {subtitle}
+          </h2>
+          <p>
+            {points}
+          </p>
         </div>
       </section>
     </div >

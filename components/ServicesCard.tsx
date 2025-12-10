@@ -1,3 +1,5 @@
+
+
 type ServicesCardProps = {
   title: string;
   subtitle?: string;
@@ -10,7 +12,7 @@ export default function ServicesCard ({title, subtitle, points, icons}: Services
 <div className=" items-center justify-center bg-zinc-90 font-sans">
       <section className="w-full max-w-3xl flex-col items-center justify-between py-24 px-16 sm:items-start border-1 bg-[var(--color-white)] hover:shadow-lg transform opacity-99 hover:opacity-100 hover:scale-102 transition-all duration-250 ease-in-out">
         <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <div>
+          <div className="flex flex-row items-center gap-2 text-center sm:items-start sm:text-left">
             {icons}
           </div>
           <h1>

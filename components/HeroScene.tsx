@@ -28,7 +28,7 @@ export default function HeroScene() {
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(width, height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    renderer.setClearColor(0x000000, 0); // full transparency
+    renderer.setClearColor(0xf2f7fe, 1);
     container.appendChild(renderer.domElement);
 
     // Lights (subtle)
@@ -78,7 +78,7 @@ export default function HeroScene() {
 
       const lineMat = new THREE.LineBasicMaterial({
         transparent: true,
-        opacity: 0.1,
+        opacity: 0.08,
         vertexColors: true // allow per-vertex colors
       });
 
@@ -86,9 +86,9 @@ export default function HeroScene() {
       const lineSegments = new THREE.LineSegments(lineGeom, lineMat);
       scene.add(lineSegments);
 
-      // let lines reach a bit farther, but fade out
-      const maxConnectionDist = 3;
-      const maxConnectionDistSq = maxConnectionDist * maxConnectionDist;
+      const innerDist = 0.0;
+      const outerDist = 3.0;
+      const outerDistSq = outerDist * outerDist;
 
 
     let frameId = 0;
@@ -110,7 +110,7 @@ export default function HeroScene() {
         }
       });
 
-      // Build connection line positions + per-segment colors
+// Build connection line positions + per-segment colors
 const positions: number[] = [];
 const colors: number[] = [];
 
@@ -123,19 +123,21 @@ for (let i = 0; i < particleCount; i++) {
     const dy = a.y - b.y;
     const distSq = dx * dx + dy * dy;
 
-    if (distSq <= maxConnectionDistSq) {
+    if (distSq <= outerDistSq) {
       const dist = Math.sqrt(distSq);
-      const t = dist / maxConnectionDist;      // 0 (close) → 1 (max distance)
-      const strength = 1 - t;                  // 1 (close) → 0 (far)
 
-      // base color scaled by strength
+      // 1.0 when dist <= innerDist, then linearly down to 0 at outerDist
+      let strength = 1;
+      if (dist > innerDist) {
+        const t = (dist - innerDist) / (outerDist - innerDist); // 0..1
+        strength = 1 - t;                                       // 1..0
+      }
+
       const r = baseColor.r * strength;
       const g = baseColor.g * strength;
       const bCol = baseColor.b * strength;
 
       positions.push(a.x, a.y, a.z, b.x, b.y, b.z);
-
-      // same color at both ends of the segment
       colors.push(r, g, bCol, r, g, bCol);
     }
   }
@@ -152,10 +154,10 @@ lineGeom.setAttribute(
 lineGeom.computeBoundingSphere();
 
 
-      // Update line geometry
-      const positionAttr = new THREE.Float32BufferAttribute(positions, 3);
-      lineGeom.setAttribute("position", positionAttr);
-      lineGeom.computeBoundingSphere();
+      // // Update line geometry
+      // const positionAttr = new THREE.Float32BufferAttribute(positions, 3);
+      // lineGeom.setAttribute("position", positionAttr);
+      // lineGeom.computeBoundingSphere();
 
       renderer.render(scene, camera);
     };
@@ -173,7 +175,6 @@ lineGeom.computeBoundingSphere();
 
     window.addEventListener("resize", handleResize);
 
-    // Cleanup
     return () => {
       cancelAnimationFrame(frameId);
       window.removeEventListener("resize", handleResize);

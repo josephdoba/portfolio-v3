@@ -5,9 +5,9 @@ import Link from "next/link"
 export default function ServicesSection () {
   return (
 <div className="items-center justify-center font-sans width">
-      <section className="w-full px-[4%] col-lg-4 col-md-4 col-sm-12 col-xs-12">
+      <section className="w-full px-[5%] col-lg-4 col-md-4 col-sm-12 col-xs-12">
          {/* max-w-3xl flex-col items-center justify-between py-32 sm:items-start */}
-          <ul className="grid gap-6 2xl:grid-cols-2 items-stretch p-[4%] px-[4%]">
+          <ul className="grid gap-6 2xl:grid-cols-2 items-stretch p-[5%] px-[5%]">
             <li className="h-full">
           <Link href="/contact">
               <ServicesCard
@@ -72,7 +72,7 @@ export default function ServicesSection () {
 // Wireshark, Nmap, Kali Linux, OpenVAS, NIST, MITRE ATT&CK, OWASP Top 10, and ISO 27001
               title="Cyber Security"
               // subtitle="I find vulnerabilities in your service before the bad-guys do, and provide next steps in mitigating cyber security risks."
-              subtitle="I find vulnerabilities before bad-actors do, and create a full action plan on how to mitigate risks."
+              subtitle="I find vulnerabilities before attackers do and create clear action plans to reduce your security risks."
             />
             </Link>
             </li>

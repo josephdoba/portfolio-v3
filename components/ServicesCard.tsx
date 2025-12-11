@@ -9,7 +9,7 @@ export default function ServicesCard ({title, subtitle, points, icons}: Services
   return (
 <div className="items-center justify-center bg-zinc-90 font-sans px-20">
 
-      <section className="w-full max-w-3xl flex-col items-center justify-between py-8 px-16 sm:items-start rounded-md bg-[var(--color-white)] shadow-sm hover:shadow-lg transform opacity-100 hover:opacity-101 hover:scale-102 transition-all duration-150 ease-in-out">
+      <section className="w-full max-w-5xl flex-col items-center justify-between py-8 px-16 sm:items-start rounded-md bg-[var(--color-white)] shadow-sm hover:shadow-lg transform opacity-100 hover:opacity-101 hover:scale-102 transition-all duration-150 ease-in-out">
         
         <div className="flex flex-col items-center gap-8 text-center sm:items-start sm:text-left">
           

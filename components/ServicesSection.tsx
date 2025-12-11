@@ -7,7 +7,7 @@ export default function ServicesSection () {
       <section className="w-full px-12">
          {/* max-w-3xl flex-col items-center justify-between py-32 sm:items-start */}
           <ul className="grid gap-6 md:grid-cols-2 items-stretch p-[5%]">
-            <li className="h-full">
+            <li className="h-full px-[5%]">
               <ServicesCard
               icons={[
                 <Image
@@ -75,8 +75,81 @@ export default function ServicesSection () {
               ]}
             />
             </li>
-            <li className="h-full">
-              <ServicesCard/>
+            <li className="h-full px-[5%]">
+              <ServicesCard
+              icons={[
+                <Image
+                key="javascript"
+                src="/webdevlogos/javascript_logo.png"
+                alt="Javascript"
+                width={200}
+                height={200}
+                className="w-10 h-10 object-contain"
+                />,
+                <Image
+                key="typescript"
+                src="/webdevlogos/ts_logo.png"
+                alt="Typescript"
+                width={200}
+                height={200}
+                className="w-10 h-10 object-contain"
+                />,
+                <Image
+                key="react"
+                src="/webdevlogos/react_logo.png"
+                alt="React"
+                width={200}
+                height={200}
+                className="w-10 h-10 object-contain"
+                />,
+                <Image
+                key="nextjs"
+                src="/webdevlogos/nextjs.svg"
+                alt="NextJS"
+                width={200}
+                height={200}
+                className="w-10 h-10 object-contain"
+                />,
+                <Image
+                key="PostgreSQL"
+                src="/webdevlogos/postgresql_logo.png"
+                alt="PostgreSQL"
+                width={200}
+                height={200}
+                className="w-10 h-10 object-contain"
+                />,
+                <Image
+                key="nodejs"
+                src="/webdevlogos/nodejs_logo.png"
+                alt="NodeJS"
+                width={200}
+                height={200}
+                className="w-10 h-10 object-contain"
+                />,
+                <Image
+                key="python"
+                src="/webdevlogos/python_logo.png"
+                alt="Python"
+                width={250}
+                height={250}
+                className="w-10 h-10 object-contain"
+                />,
+                <Image
+                key="rust"
+                src="/webdevlogos/rust_logo.png"
+                alt="Python"
+                width={250}
+                height={250}
+                className="w-10 h-10 object-contain"
+                />
+              ]}
+// Wireshark, Nmap, Kali Linux, OpenVAS, NIST, MITRE ATT&CK, OWASP Top 10, and ISO 27001
+              title="Web Development"
+              subtitle="I can plan and build websites from start to finish"
+              points={[
+                ""
+              ]}
+            />
             </li>
           </ul>
         <div className="max-w-5xl mx-auto px-8 font-sans ">

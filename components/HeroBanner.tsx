@@ -7,7 +7,7 @@ export default function HeroBanner() {
   return (
     <section className="relative w-full overflow-hidden pt-24 pb-48">
       <div className="absolute inset-0 -z-10">
-        <HeroScene />
+        <HeroScene/>
       </div>
       <div className="max-w-5xl mx-auto px-6 font-sans py-32">
         {/* w-stretch flex items-center justify-left font-sans border-1 border-solid border-[var(--color-red)] */}

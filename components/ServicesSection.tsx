@@ -4,10 +4,10 @@ import Image from "next/image"
 export default function ServicesSection () {
   return (
 <div className="items-center justify-center font-sans width">
-      <section className="w-full px-12">
+      <section className="w-full px-[3%] col-lg-4 col-md-4 col-sm-12 col-xs-12">
          {/* max-w-3xl flex-col items-center justify-between py-32 sm:items-start */}
-          <ul className="grid gap-6 md:grid-cols-2 items-stretch p-[5%]">
-            <li className="h-full px-[5%]">
+          <ul className="grid gap-6 xl:grid-cols-2 items-stretch p-[5%] px-[5%]">
+            <li className="h-full">
               <ServicesCard
               icons={[
                 <Image
@@ -75,7 +75,7 @@ export default function ServicesSection () {
               ]}
             />
             </li>
-            <li className="h-full px-[5%]">
+            <li className="h-full">
               <ServicesCard
               icons={[
                 <Image

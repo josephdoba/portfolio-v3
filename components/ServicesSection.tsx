@@ -1,5 +1,6 @@
 import ServicesCard from "./ServicesCard"
 import Image from "next/image"
+import Link from "next/link"
 
 export default function ServicesSection () {
   return (
@@ -8,6 +9,7 @@ export default function ServicesSection () {
          {/* max-w-3xl flex-col items-center justify-between py-32 sm:items-start */}
           <ul className="grid gap-6 xl:grid-cols-2 items-stretch p-[5%] px-[5%]">
             <li className="h-full">
+          <Link href="/contact">
               <ServicesCard
               icons={[
                 <Image
@@ -74,8 +76,10 @@ export default function ServicesSection () {
                 ""
               ]}
             />
+            </Link>
             </li>
             <li className="h-full">
+            <Link href="/contact">
               <ServicesCard
               icons={[
                 <Image
@@ -150,6 +154,7 @@ export default function ServicesSection () {
                 ""
               ]}
             />
+            </Link>
             </li>
           </ul>
         <div className="max-w-5xl mx-auto px-8 font-sans ">

@@ -21,7 +21,7 @@ export default function HeroScene() {
     const height = container.clientHeight || 260;
 
     const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100);
-    camera.position.set(0, 0, 5);
+    camera.position.set(0, 0, 4);
     camera.lookAt(0, 0, 0);
 
     // Renderer (transparent)
@@ -40,18 +40,18 @@ export default function HeroScene() {
     scene.add(dir);
 
     // --- Particles setup ---
-    const particleCount = 60;
-    const areaX = 5;
-    const areaY = 5;      
+    const particleCount = 100;
+    const areaX = 7;
+    const areaY = 7;      
     const maxSpeed = 0.01;
 
     const particleGeom = new THREE.SphereGeometry(0.06, 8, 8);
     const particleMat = new THREE.MeshStandardMaterial({
       color: 0x0d6efd, // blue
       emissive: 0x0d6efd,
-      emissiveIntensity: 1.7,
+      emissiveIntensity: 1.2,
       metalness: 0.8,
-      roughness: 0.2,
+      roughness: 0.1,
     });
 
     const particles: Particle[] = [];

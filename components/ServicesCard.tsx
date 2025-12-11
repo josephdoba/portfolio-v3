@@ -15,13 +15,13 @@ export default function ServicesCard ({title, subtitle, points, icons}: Services
           <div className="flex flex-row justify-center items-center gap-1 sm:items-start sm:text-left space-x-4 ">
             {icons}
           </div>
-          <h1>
+          <h1 className="">
             {title}
           </h1>
           <h2>
             {subtitle}
           </h2>
-          <p>
+          <p className="">
             {points}
           </p>
         </div>

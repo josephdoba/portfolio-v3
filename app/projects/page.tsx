@@ -1,18 +1,57 @@
-export default function Projects() {
+// app/projects/page.tsx
+import ProjectCard from "@/components/ProjectCard";
+
+const projects = [
+  {
+    title: "Portfolio v3",
+    blurb:
+      "This very site! - a React/Next.js portfolio with Supabase-powered blog, custom Three.js hero animation, and responsive Tailwind layout.",
+    role: "Design, Frontend, Backend, Deployment",
+    techStack: "Next.js - React - TypeScript - Tailwind - Supabase - Node",
+    href: "https://github.com/josephdoba/portfolio-v3",
+  },
+  {
+    title: "Music In Communities Website",
+    blurb:
+      "A redesign for an arts non-profit: clearer information architecture, accessible typography, and a streamlined events section for workshops and concerts.",
+    role: "Freelance Web Developer",
+    techStack: "Bandzoogle - HTML/CSS - UI Improvements",
+    href: "https://musicincommunities.com/",
+  },
+    {
+    title: "TinyShark (in progress)",
+    blurb:
+      "A lightweight Rust-based packet capture and inspection tool, built to sharpen my network and systems understanding while I study for Network+.",
+    role: "Personal Rust / Security Tooling",
+    techStack: "Rust - pcap - CLI tooling",
+    href: "https://github.com/josephdoba/tinyshark",
+  },
+  {
+    title: "Incident Response Report Capstone",
+    blurb:
+      "A lightweight Rust-based packet capture and inspection tool, built to sharpen my network and systems understanding while I study for Network+.",
+    role: "Personal Rust / Security Tooling",
+    techStack: "Wireshark - MITRE ATT&CK - CrowdStrike - NIST",
+    href: "https://github.com/josephdoba/IncidentResponseReport",
+  },
+];
+
+export default function ProjectsPage() {
   return (
-    <div className="flex min-h-screen items-center justify-center">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 sm:items-start">
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-4xl leading-1 tracking-tight font-sans underline decoration-[var(--color-blue)]">
+    <div className="min-h-screen bg-[var(--background)]">
+      <main className="max-w-5xl mx-auto px-6 sm:px-12 py-24 font-sans">
+        <section className="mb-12">
+          <h1 className="text-3xl sm:text-4xl mb-4 underline decoration-[var(--color-orange-alt)]">
             Projects
           </h1>
-          <p className="text-medium font-mono py-[5%]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum in dui non convallis. Ut consequat facilisis sapien vitae lobortis. Proin tempor, sem ac posuere feugiat, lectus turpis hendrerit elit, eget tempor nulla elit a urna. In pellentesque turpis turpis, nec pulvinar libero imperdiet et. Maecenas scelerisque malesuada eros at vehicula. Fusce dapibus volutpat mauris, sit amet posuere dui blandit at. Cras ac pretium felis, ac convallis ante. Donec et nulla a velit tristique suscipit. Donec est sapien, convallis tincidunt lacinia nec, pellentesque porta eros. Mauris sit amet lectus lorem. Vestibulum urna urna, tincidunt in bibendum eu, condimentum id tortor. Suspendisse mattis iaculis magna eget dictum. Proin at enim nec odio ullamcorper dignissim. Quisque venenatis, ligula eu pharetra maximus, sapien odio faucibus magna, at accumsan purus odio id lacus. Sed sit amet ante nec tellus imperdiet fringilla sed ut nibh.
+        </section>
 
-
-          </p>
-        </div>
-      </main >
-    </div >
+        <section className="space-y-8">
+          {projects.map((project) => (
+            <ProjectCard key={project.title} {...project} />
+          ))}
+        </section>
+      </main>
+    </div>
   );
 }

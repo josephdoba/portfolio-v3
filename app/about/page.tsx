@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function About() {
   return (
     <div className="min-h-screen bg-[var(--background)]">
-      <main className="max-w-5xl mx-auto px-6 py-28 font-sans">
+      <main className="max-w-5xl mx-auto px-6 py-24 font-sans">
         {/* Top section: image + text */}
         <section className="flex flex-col md:flex-row items-start gap-10 md:gap-14">
           {/* Avatar / photo */}

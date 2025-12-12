@@ -71,7 +71,6 @@ export default function ServicesSection () {
               ]}
 // Wireshark, Nmap, Kali Linux, OpenVAS, NIST, MITRE ATT&CK, OWASP Top 10, and ISO 27001
               title="Cyber Security"
-              // subtitle="I find vulnerabilities in your service before the bad-guys do, and provide next steps in mitigating cyber security risks."
               subtitle="I find vulnerabilities before attackers do and create clear action plans to reduce your security risks."
             />
             </Link>
@@ -153,7 +152,6 @@ export default function ServicesSection () {
             </li>
           </ul>
         <div className="max-w-5xl mx-auto px-8 font-sans ">
-          {/* flex flex-col items-center gap-6 text-center sm:items-start sm:text-left */}
           
         </div>
       </section>

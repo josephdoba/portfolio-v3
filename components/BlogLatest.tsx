@@ -1,9 +1,9 @@
 export default function BlogLatest () {
   return (
 <div className="items-center justify-center font-sans">
-      <section className="w-full px-[8%] ">
+      <section className="w-full px-[15%] ">
          {/* max-w-3xl flex-col items-center justify-between py-32 sm:items-start */}
-        <h1 className="text-3xl leading-1 tracking-tight font-sans p-[8%] underline decoration-[var(--color-blue)]">
+        <h1 className="text-3xl leading-1 tracking-tight font-sans p-[2%] underline decoration-[var(--color-blue)]">
             Latest Blog
         </h1>
           <ul className="grid gap-6 md:grid-cols-2 items-stretch p-[15%]">

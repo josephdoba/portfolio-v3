@@ -72,8 +72,7 @@ export default function ServicesCard({
             </div>
           )}
 
-          {/* TEXT CONTENT */}
-          <h1 className="text-lg font-sans">{title}</h1>
+          <h1 className="text-lg font-sans underline decoration-[var(--color-blue)]">{title}</h1>
 
           {subtitle && (
             <h2 className="text-md font-mono opacity-90">{subtitle}</h2>

@@ -17,7 +17,7 @@ export default function HeroBanner() {
               Joseph Doba
             </h1>
             <h2 className="text-xl font-mono m-8">
-              Hello! I’m a freelance <strong>Web Developer</strong> and <strong>Cyber Security Specialist</strong>. I build and secure websites for small to medium-sized businesses.
+              Hello! I’m a freelance <strong className="underline decoration-[var(--color-orange-alt)]">Web Developer</strong> and <strong className="underline decoration-[var(--color-orange-alt)]">Cyber Security Specialist</strong>. I build and secure websites for small to medium-sized businesses.
             </h2>
         </main>
       </div >

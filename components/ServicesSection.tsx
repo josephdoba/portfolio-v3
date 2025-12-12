@@ -54,7 +54,7 @@ export default function ServicesSection () {
                 />,
                 <Image
                 key="openvas"
-                src="/cyberseclogo/openvas_logo.png"
+                src="/cyberseclogo/openvas_logo.svg"
                 alt="Kali Linux"
                 width={200}
                 height={200}
@@ -64,8 +64,8 @@ export default function ServicesSection () {
                 key="owasp"
                 src="/cyberseclogo/OWASP_Icon_R_Black.svg"
                 alt="OWASP"
-                width={250}
-                height={250}
+                width={200}
+                height={200}
                 className="w-10 h-10 object-contain"
                 />
               ]}

@@ -18,39 +18,52 @@ export default function ServicesCard({
     <div className="items-center justify-center bg-zinc-90 font-sans">
       <section className="w-full max-w-5xl flex-col items-center justify-between py-8 px-16 sm:items-start rounded-md bg-[var(--color-white)] shadow-sm hover:shadow-lg transform opacity-100 hover:opacity-101 hover:scale-102 transition-all duration-150 ease-in-out">
         <div className="flex flex-col items-center gap-8 text-center sm:items-start sm:text-left">
-          {/* ICON STRIP */}
+
           {icons && icons.length > 0 && (
-            <div className="relative w-full overflow-hidden">
+            <div className="relative w-full overflow-x-hidden">
               <div className="flex animate-marquee">
-                {/* first copy */}
                 {icons.map((icon, i) => (
-                  <div key={`icon-main-${i}`} className="shrink-0 px-1">
+                  <div key={`icon-main-${i}`} className="shrink-0 px-[2%]">
                     {icon}
                   </div>
                 ))}
-                {/* duplicate copy for seamless loop */}
                 {icons.map((icon, i) => (
                   <div
                     key={`icon-dup-${i}`}
-                    className="shrink-0 px-1"
+                    className="shrink-0 px-[2%]"
                     aria-hidden="true">
                     {icon}
                   </div>
                 ))}
-                {/* duplicate copy for seamless loop */}
+
                 {icons.map((icon, i) => (
                   <div
                     key={`icon-dup-${i}`}
-                    className="shrink-0 px-1"
+                    className="shrink-0 px-[2%]"
                     aria-hidden="true">
                     {icon}
                   </div>
                 ))}
-                                {/* duplicate copy for seamless loop */}
                 {icons.map((icon, i) => (
                   <div
                     key={`icon-dup-${i}`}
-                    className="shrink-0 px-1"
+                    className="shrink-0 px-[2%]"
+                    aria-hidden="true">
+                    {icon}
+                  </div>
+                ))}
+                  {icons.map((icon, i) => (
+                  <div
+                    key={`icon-dup-${i}`}
+                    className="shrink-0 px-[2%]"
+                    aria-hidden="true">
+                    {icon}
+                  </div>
+                ))}
+                  {icons.map((icon, i) => (
+                  <div
+                    key={`icon-dup-${i}`}
+                    className="shrink-0 px-[2%]"
                     aria-hidden="true">
                     {icon}
                   </div>

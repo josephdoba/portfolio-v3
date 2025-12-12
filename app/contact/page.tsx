@@ -5,26 +5,19 @@ export default function ContactPage() {
     <div className="min-h-screen bg-[var(--background)]">
       <main className="max-w-5xl mx-auto px-6 py-28 font-sans">
         <section className="grid gap-10 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1.2fr)] items-start">
-          <div className="space-y-4">
+          <div className="space-y-12 ">
             <h1 className="text-3xl md:text-4xl leading-tight tracking-tight">
               Let’s talk!
             </h1>
 
             <p className="text-[18px] font-mono leading-relaxed text-zinc-700">
-              Tell me a bit about your business, your website, and any goals or security concerns you have. I’ll review it and get back to you as soon as I can.
+              Feel free to get in contact to tell me a bit about your business, project, or  your website, and any goals or security concerns you have. I’ll review it and get back to you as soon as I can.
             </p>
 
-            <p className="text-[18x] font-mono leading-relaxed text-zinc-700">
-              Tell me a bit about your business, what you’re trying to achieve,
-              and any deadlines or constraints. I’ll get back to you with next
-              steps and suggested options.
-
-              
-            </p>
 
             
               {/* flex flex-row justify-center justify-around scale-150 */}
-              <ul className="flex flex-row justify-around grid grid-cols-3 scale-115">
+              <ul className="flex flex-row justify-around scale-150 px-[15%]">
                 <li>
                   <a
                         href="https://www.linkedin.com/in/joseph-aj-doba/"

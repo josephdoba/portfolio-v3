@@ -15,11 +15,7 @@ export default async function BlogPostPage({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  // ⬇️ unwrap the promise
   const { slug } = await params;
-
-  // helpful for debugging in dev
-  console.log("BlogPostPage slug param:", slug);
 
   const { data: post, error } = await supabase
     .from("blog_posts")

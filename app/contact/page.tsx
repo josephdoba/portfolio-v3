@@ -14,8 +14,6 @@ export default function ContactPage() {
               Feel free to get in contact to tell me a bit about your business, project, goals or security concerns you have and what you are looking for. You can email me directly at: <strong className="underline decoration-[var(--color-orange-alt)]">josephdoba@gmail.com</strong>
             </p>
 
-            
-              {/* flex flex-row justify-center justify-around scale-150 */}
               <ul className="flex flex-row justify-around scale-150 px-[20%]">
                 <li>
                   <a

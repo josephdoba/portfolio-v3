@@ -22,7 +22,7 @@ export default function ServicesSection () {
                 />,
                 <Image
                 key="nmap"
-                src="/cyberseclogo/nmap-logo-1.png"
+                src="/cyberseclogo/nmap_logo.png"
                 alt="Nmap"
                 width={200}
                 height={200}

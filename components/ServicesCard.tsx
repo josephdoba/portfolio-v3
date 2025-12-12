@@ -1,4 +1,3 @@
-// components/ServicesCard.tsx
 import type { ReactNode } from "react";
 
 type ServicesCardProps = {
@@ -15,10 +14,22 @@ export default function ServicesCard({
   icons,
 }: ServicesCardProps) {
   return (
-    <div className="items-center justify-center bg-zinc-90 font-sans">
-      <section className="w-full max-w-5xl flex-col items-center justify-between py-8 px-16 sm:items-start rounded-md bg-[var(--color-white)] shadow-sm hover:shadow-lg transform opacity-100 hover:opacity-101 hover:scale-102 transition-all duration-150 ease-in-out">
-        <div className="flex flex-col items-center gap-8 text-center sm:items-start sm:text-left">
-
+    <div className="flex justify-center font-sans">
+      <section
+        className="
+          w-full max-w-md
+          flex flex-col
+          items-center sm:items-start
+          justify-between
+          py-8 px-6
+          rounded-md
+          bg-[var(--color-white)]
+          shadow-sm hover:shadow-lg
+          transform hover:scale-102
+          transition-all duration-150 ease-in-out
+        "
+      >
+        <div className="flex w-full flex-col items-center gap-6 text-center sm:items-start sm:text-left">
           {icons && icons.length > 0 && (
             <div className="relative w-full overflow-x-hidden">
               <div className="flex animate-marquee">
@@ -29,42 +40,19 @@ export default function ServicesCard({
                 ))}
                 {icons.map((icon, i) => (
                   <div
-                    key={`icon-dup-${i}`}
+                    key={`icon-dup1-${i}`}
                     className="shrink-0 px-[2%]"
-                    aria-hidden="true">
-                    {icon}
-                  </div>
-                ))}
-
-                {icons.map((icon, i) => (
-                  <div
-                    key={`icon-dup-${i}`}
-                    className="shrink-0 px-[2%]"
-                    aria-hidden="true">
+                    aria-hidden="true"
+                  >
                     {icon}
                   </div>
                 ))}
                 {icons.map((icon, i) => (
                   <div
-                    key={`icon-dup-${i}`}
+                    key={`icon-dup2-${i}`}
                     className="shrink-0 px-[2%]"
-                    aria-hidden="true">
-                    {icon}
-                  </div>
-                ))}
-                  {icons.map((icon, i) => (
-                  <div
-                    key={`icon-dup-${i}`}
-                    className="shrink-0 px-[2%]"
-                    aria-hidden="true">
-                    {icon}
-                  </div>
-                ))}
-                  {icons.map((icon, i) => (
-                  <div
-                    key={`icon-dup-${i}`}
-                    className="shrink-0 px-[2%]"
-                    aria-hidden="true">
+                    aria-hidden="true"
+                  >
                     {icon}
                   </div>
                 ))}
@@ -72,7 +60,9 @@ export default function ServicesCard({
             </div>
           )}
 
-          <h1 className="text-lg font-sans underline decoration-[var(--color-blue)]">{title}</h1>
+          <h1 className="text-lg font-sans underline decoration-[var(--color-blue)]">
+            {title}
+          </h1>
 
           {subtitle && (
             <h2 className="text-md font-mono opacity-90">{subtitle}</h2>

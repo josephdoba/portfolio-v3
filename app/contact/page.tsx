@@ -4,7 +4,8 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-[var(--background)] bg-[var(--color-blue)]/5">
       <main className="max-w-5xl mx-auto px-6 py-28 font-sans">
-        <section className="grid gap-10 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1.2fr)] items-start">
+        {/* <section className="grid gap-10 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1.2fr)] items-start"> */}
+        <section className="grid gap-1 md:grid-cols-1 items-start">
           <div className="space-y-12 ">
             <h1 className="text-3xl md:text-4xl leading-tight tracking-tight underline decoration-[var(--color-blue)]">
               Let’s talk!
@@ -64,7 +65,7 @@ export default function ContactPage() {
               </ul>
             
           </div>
-          <ContactForm />
+          {/* <ContactForm /> */}
         </section>
       </main>
     </div>

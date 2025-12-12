@@ -11,7 +11,7 @@ export default function HeroBanner() {
       </div>
       <div className="max-w-5xl mx-auto px-6 font-sans py-32">
         {/* w-stretch flex items-center justify-left font-sans border-1 border-solid border-[var(--color-red)] */}
-        <main className="max-w-4xl flex-col items-center justify-between px-12 sm: items-start backdrop-blur-lg">
+        <main className="max-w-4xl flex-col items-center justify-between px-[2%] sm: items-start backdrop-blur-lg">
           {/* max-w-3xl flex-col items-center justify-between py-32 px-16 sm:items-start */}
             <h1 className="text-6xl leading-tight tracking-tight m-8 underline decoration-[var(--color-blue)]">
               Joseph Doba

@@ -5,10 +5,10 @@ import Link from "next/link"
 export default function ServicesSection () {
   return (
 <div className="items-center justify-center font-sans width">
-      <section className="w-full px-[10%] col-lg-4 col-md-4 col-sm-12 col-xs-12">
+      <section className="w-full px-[10%] py-[4%] col-lg-4 col-md-4 col-sm-12 col-xs-12">
          {/* max-w-3xl flex-col items-center justify-between py-32 sm:items-start */}
-          <ul className="grid gap-6 2xl:grid-cols-2 items-stretch p-[10%]">
-            <li className="h-full">
+          <ul className="grid gap-6 2xl:grid-cols-2 items-stretch px-4">
+            <li className="w-full">
           <Link href="/contact">
               <ServicesCard
               icons={[
@@ -75,7 +75,7 @@ export default function ServicesSection () {
             />
             </Link>
             </li>
-            <li className="h-full">
+            <li className="w-full">
             <Link href="/contact">
               <ServicesCard
               icons={[

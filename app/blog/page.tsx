@@ -25,7 +25,6 @@ export default async function Blog() {
       </div>
     );
   }
-
   return (
     <div className="flex min-h-screen justify-center bg-[var(--color-blue)]/5">
       <main className="flex w-full max-w-4xl flex-col py-32 px-6 sm:px-16">

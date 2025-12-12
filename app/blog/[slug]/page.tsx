@@ -1,10 +1,5 @@
-import { createClient } from "@supabase/supabase-js";
+import { supabase } from "@/lib/supabase";
 import { notFound } from "next/navigation";
-
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!
-);
 
 type BlogPost = {
   id: number;
@@ -13,28 +8,34 @@ type BlogPost = {
   subtitle: string | null;
   content: string;
   created_at: string;
-  cover_image_url: string | null;
 };
 
 export default async function BlogPostPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const { slug } = params;
+  // ⬇️ unwrap the promise
+  const { slug } = await params;
 
-  const { data, error } = await supabase
+  // helpful for debugging in dev
+  console.log("BlogPostPage slug param:", slug);
+
+  const { data: post, error } = await supabase
     .from("blog_posts")
     .select("*")
     .eq("slug", slug)
-    .single<BlogPost>();
+    .maybeSingle<BlogPost>();
 
-  if (error || !data) {
-    console.error(error);
+  if (error) {
+    console.error("Supabase error loading post:", error);
     notFound();
   }
 
-  const post = data;
+  if (!post) {
+    console.error("No post found for slug:", slug);
+    notFound();
+  }
 
   return (
     <div className="min-h-screen bg-[var(--background)]">
@@ -49,10 +50,7 @@ export default async function BlogPostPage({
           <p className="text-lg text-zinc-700 mb-6">{post.subtitle}</p>
         )}
 
-        {/* optional cover image later */}
-
         <article className="prose prose-zinc max-w-none font-mono text-[15px]">
-          {/* for now content is plain text; later you can store markdown/HTML */}
           {post.content.split("\n\n").map((para, i) => (
             <p key={i}>{para}</p>
           ))}

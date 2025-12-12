@@ -1,4 +1,3 @@
-// components/ContactForm.tsx
 "use client";
 
 import { FormEvent, useState } from "react";
@@ -51,16 +50,15 @@ export default function ContactForm() {
       onSubmit={handleSubmit}
       className="w-full rounded-lg border border-zinc-200 bg-white/90 p-6 shadow-sm backdrop-blur"
     >
-      {/* Honeypot (hidden from real humans) */}
       <div className="hidden">
-        <label htmlFor="website">Leave this field empty</label>
+        <label htmlFor="website"></label>
         <input id="website" name="website" type="text" autoComplete="off" />
       </div>
 
       <div className="grid gap-4">
         <div className="grid gap-2">
           <label htmlFor="name" className="text-sm font-mono">
-            Name<span className="text-red-500">*</span>
+            Name <span className="text-red-500">*</span>
           </label>
           <input
             id="name"
@@ -72,7 +70,7 @@ export default function ContactForm() {
 
         <div className="grid gap-2">
           <label htmlFor="email" className="text-sm font-mono">
-            Email<span className="text-red-500">*</span>
+            Email <span className="text-red-500">*</span>
           </label>
           <input
             id="email"
@@ -104,17 +102,15 @@ export default function ContactForm() {
             className="w-full rounded-md border border-zinc-300 bg-[var(--background)] px-3 py-2 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-[var(--color-blue)]"
             defaultValue="unspecified"
           >
-            <option value="unspecified">Not sure yet</option>
-            <option value="web">Web development</option>
-            <option value="security">Security review / penetration test</option>
-            <option value="both">Both web + security</option>
+            <option value="web">Web Development</option>
+            <option value="security">Cyber Security / Penetration test</option>
             <option value="other">Something else</option>
           </select>
         </div>
 
         <div className="grid gap-2">
           <label htmlFor="message" className="text-sm font-mono">
-            Tell me about your project<span className="text-red-500">*</span>
+            Message <span className="text-red-500">*</span>
           </label>
           <textarea
             id="message"
@@ -122,7 +118,7 @@ export default function ContactForm() {
             required
             rows={5}
             className="w-full rounded-md border border-zinc-300 bg-[var(--background)] px-3 py-2 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-[var(--color-blue)]"
-            placeholder="What do you need help with? Any timelines or constraints I should know about?"
+            placeholder="How can I help?"
           />
         </div>
 

@@ -29,7 +29,7 @@ export default async function Blog() {
   return (
     <div className="flex min-h-screen justify-center">
       <main className="flex w-full max-w-4xl flex-col py-32 px-6 sm:px-16">
-        <h1 className="text-4xl font-sans mb-8">Blog</h1>
+        <h1 className="text-4xl font-sans mb-8 underline decoration-[var(--color-blue)]">Blog</h1>
 
         <ul className="space-y-8">
           {posts?.map((post: BlogPost) => {
@@ -45,7 +45,7 @@ export default async function Blog() {
                 className="rounded-lg border border-zinc-200 bg-white/80 p-6 shadow-sm"
               >
                 <Link href={`/blog/${post.slug}`}>
-                  <h2 className="text-2xl font-sans mb-1 hover:underline">
+                  <h2 className="text-2xl font-sans mb-1 hover:underline underline decoration-[var(--color-orange-alt)]">
                     {post.title}
                   </h2>
                 </Link>

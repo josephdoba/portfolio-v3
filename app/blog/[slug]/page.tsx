@@ -36,11 +36,13 @@ export default async function BlogPostPage({
   return (
     <div className="min-h-screen bg-[var(--background)]">
       <main className="max-w-3xl mx-auto px-6 py-16 font-sans">
-        <p className="text-xs font-mono text-zinc-500 mb-3">
+
+
+        <h1 className="text-3xl font-bold mb-3 underline decoration-[var(--color-blue)] py-2">{post.title}</h1> 
+                <p className="text-xs font-mono text-zinc-500 mb-3">
           {new Date(post.created_at).toLocaleDateString()}
         </p>
-
-        <h1 className="text-3xl font-bold mb-3">{post.title}</h1>
+        <hr className="py-2"></hr>
 
         {post.subtitle && (
           <p className="text-lg text-zinc-700 mb-6">{post.subtitle}</p>

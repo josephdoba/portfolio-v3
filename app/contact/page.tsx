@@ -6,18 +6,17 @@ export default function ContactPage() {
       <main className="max-w-5xl mx-auto px-6 py-28 font-sans">
         <section className="grid gap-10 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1.2fr)] items-start">
           <div className="space-y-12 ">
-            <h1 className="text-3xl md:text-4xl leading-tight tracking-tight">
+            <h1 className="text-3xl md:text-4xl leading-tight tracking-tight underline decoration-[var(--color-blue)]">
               Let’s talk!
             </h1>
 
             <p className="text-[18px] font-mono leading-relaxed text-zinc-700">
-              Feel free to get in contact to tell me a bit about your business, project, or  your website, and any goals or security concerns you have. I’ll review it and get back to you as soon as I can.
+              Feel free to get in contact to tell me a bit about your business, project, goals or security concerns you have and what you are looking for. You can email me directly at: <strong className="underline decoration-[var(--color-orange-alt)]">josephdoba@gmail.com</strong>
             </p>
-
 
             
               {/* flex flex-row justify-center justify-around scale-150 */}
-              <ul className="flex flex-row justify-around scale-150 px-[15%]">
+              <ul className="flex flex-row justify-around scale-150 px-[20%]">
                 <li>
                   <a
                         href="https://www.linkedin.com/in/joseph-aj-doba/"
@@ -57,7 +56,7 @@ export default function ContactPage() {
                   </a>
                 </li>
                 <li>
-                  <a href="/contact"
+                  <a href="mailto:josephdoba@gmail.com"
                   className="text-[var(--color-black)] hover:text-[var(--color-orange-alt)] transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/>

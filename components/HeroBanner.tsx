@@ -13,7 +13,7 @@ export default function HeroBanner() {
         {/* w-stretch flex items-center justify-left font-sans border-1 border-solid border-[var(--color-red)] */}
         <main className="max-w-4xl flex-col items-center justify-between px-12 sm: items-start backdrop-blur-lg">
           {/* max-w-3xl flex-col items-center justify-between py-32 px-16 sm:items-start */}
-            <h1 className="text-6xl leading-tight tracking-tight m-8">
+            <h1 className="text-6xl leading-tight tracking-tight m-8 underline decoration-[var(--color-blue)]">
               Joseph Doba
             </h1>
             <h2 className="text-xl font-mono m-8">

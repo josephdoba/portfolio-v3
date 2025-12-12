@@ -21,8 +21,8 @@ export default function About() {
 
           {/* Text content */}
           <div className="flex-1 space-y-4">
-            <h1 className="text-3xl md:text-4xl leading-tight tracking-tight">
-              About Joseph AJ Doba
+            <h1 className="text-3xl md:text-4xl leading-tight tracking-tight underline decoration-[var(--color-blue)]">
+              Who is Joseph Doba?
             </h1>
 
             <p className="text-sm font-mono text-zinc-600">

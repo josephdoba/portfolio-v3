@@ -2,7 +2,7 @@ import ContactForm from "@/components/ContactForm";
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-[var(--background)] bg-[var(--color-blue)]/5">
+    <div className="min-h-screen bg-[var(--color-blue)]/5">
       <main className="max-w-5xl mx-auto px-6 py-28 font-sans">
         {/* <section className="grid gap-10 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1.2fr)] items-start"> */}
         <section className="grid gap-1 md:grid-cols-1 items-start">
@@ -15,7 +15,7 @@ export default function ContactPage() {
               Feel free to get in contact to tell me a bit about your business, project, goals or security concerns you have and what you are looking for. You can email me directly at: <strong className="underline decoration-[var(--color-orange-alt)]">josephdoba@gmail.com</strong>
             </p>
 
-              <ul className="flex flex-row justify-around scale-150 px-[20%]">
+              <ul className="flex flex-row justify-center scale-150 space-x-10">
                 <li>
                   <a
                         href="https://www.linkedin.com/in/joseph-aj-doba/"

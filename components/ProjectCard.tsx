@@ -1,4 +1,3 @@
-// components/ProjectCard.tsx
 import Link from "next/link";
 
 type ProjectCardProps = {

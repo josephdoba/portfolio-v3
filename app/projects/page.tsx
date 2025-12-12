@@ -1,4 +1,3 @@
-// app/projects/page.tsx
 import ProjectCard from "@/components/ProjectCard";
 
 const projects = [
@@ -23,7 +22,7 @@ const projects = [
     blurb:
       "A lightweight Rust-based packet capture and inspection tool, built to sharpen my network and systems understanding while I study for Network+.",
     role: "Personal Rust / Security Tooling",
-    techStack: "Rust - pcap - CLI tooling",
+    techStack: "Rust - Pcap",
     href: "https://github.com/josephdoba/tinyshark",
   },
   {
@@ -38,7 +37,7 @@ const projects = [
 
 export default function ProjectsPage() {
   return (
-    <div className="min-h-screen bg-[var(--background)]">
+    <div className="min-h-screen bg-[var(--color-blue)]/5">
       <main className="max-w-5xl mx-auto px-6 sm:px-12 py-24 font-sans">
         <section className="mb-12">
           <h1 className="text-3xl sm:text-4xl mb-4 underline decoration-[var(--color-orange-alt)]">

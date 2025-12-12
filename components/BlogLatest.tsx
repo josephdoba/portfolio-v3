@@ -25,18 +25,19 @@ export default async function BlogLatest() {
   }
 
   const preview = 
-    post.content.length > 200 ? post.content.slice(0, 200).trimEnd() + "..." : post.content;
+    post.content.length > 300 ? post.content.slice(0, 300).trimEnd() + "..." : post.content;
   
   
   
   return (
   <div className="items-center justify-center font-sans">
-        <section className="w-full px-[15%] ">
-          <h1 className="text-3xl leading-1 tracking-tight font-sans p-[2%] underline decoration-[var(--color-blue)]">
+        <section className="bg-[var(--color-blue)]/5 flex-col items-center justify-between p-[4%] px-[8%] ">
+        {/* max-w-4xl flex-col items-center justify-between px-12 sm: items-start  */}
+          <h1 className="text-3xl leading-1 tracking-tight font-sans underline decoration-[var(--color-blue)]">
               Latest Blog
           </h1>
           
-          <ul className="grid gap-6 md:grid-cols-2 items-stretch p-[15%]">
+          <ul className="items-stretch">
             <li className="h-full">
               <Link
                 href={`/blog/${post.slug}`}
@@ -52,7 +53,7 @@ export default async function BlogLatest() {
                   <p className="text-sm text-zinc-600 mb-3">{post.subtitle}</p>
                 )}
 
-                <p className="text-sm font-mono mb-3">{preview}</p>
+                <p className="text-md font-mono">{preview}</p>
 
                 <span className="text-sm font-mono text-[var(--color-blue)]">
                   Read more →

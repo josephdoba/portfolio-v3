@@ -112,9 +112,17 @@ export default function ServicesSection () {
                 className="w-10 h-10 object-contain"
                 />,
                 <Image
-                key="PostgreSQL"
+                key="postgresql"
                 src="/webdevlogos/postgresql_logo.png"
                 alt="PostgreSQL"
+                width={200}
+                height={200}
+                className="w-10 h-10 object-contain"
+                />,
+                <Image
+                key="supabase"
+                src="/webdevlogos/Supabase_logo.png"
+                alt="Supabase"
                 width={200}
                 height={200}
                 className="w-10 h-10 object-contain"
@@ -138,7 +146,7 @@ export default function ServicesSection () {
                 <Image
                 key="rust"
                 src="/webdevlogos/rust_logo.png"
-                alt="Python"
+                alt="Rust"
                 width={250}
                 height={250}
                 className="w-10 h-10 object-contain"

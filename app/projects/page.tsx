@@ -5,7 +5,7 @@ const projects = [
     title: "Portfolio v3",
     blurb:
       "This very site! - a React/Next.js portfolio with Supabase-powered blog, custom Three.js hero animation, and responsive Tailwind layout.",
-    role: "Design, Frontend, Backend, Deployment",
+    role: "Web Developer",
     techStack: "Next.js - React - TypeScript - Tailwind - Supabase - Node",
     href: "https://github.com/josephdoba/portfolio-v3",
   },
@@ -13,7 +13,7 @@ const projects = [
     title: "Music In Communities Website",
     blurb:
       "A redesign for an arts non-profit: clearer information architecture, accessible typography, and a streamlined events section for workshops and concerts.",
-    role: "Freelance Web Developer",
+    role: "Web Developer",
     techStack: "Bandzoogle - HTML/CSS - UI Improvements",
     href: "https://musicincommunities.com/",
   },
@@ -21,7 +21,7 @@ const projects = [
     title: "TinyShark (in progress)",
     blurb:
       "A lightweight Rust-based packet capture and inspection tool, built to sharpen my network and systems understanding while I study for Network+.",
-    role: "Personal Rust / Security Tooling",
+    role: "Cyber Security",
     techStack: "Rust - Pcap",
     href: "https://github.com/josephdoba/tinyshark",
   },
@@ -29,7 +29,7 @@ const projects = [
     title: "Incident Response Report Capstone",
     blurb:
       "Capstone project for my Cyber Security Diploma from Lighthouse Labs. The project is split up between 3 different submissions required to pass. This repository showcases an Incident Response Report for a fictitious company.",
-    role: "Wireshark - MITRE ATT&CK - CrowdStrike - NIST",
+    role: "Cyber Security",
     techStack: "Wireshark - MITRE ATT&CK - CrowdStrike - NIST",
     href: "https://github.com/josephdoba/IncidentResponseReport",
   },

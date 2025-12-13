@@ -121,7 +121,7 @@ export default function ServicesSection () {
                 />,
                 <Image
                 key="supabase"
-                src="/webdevlogos/Supabase_logo.png"
+                src="/webdevlogos/supabase_logo.png"
                 alt="Supabase"
                 width={200}
                 height={200}

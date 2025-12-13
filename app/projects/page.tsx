@@ -28,8 +28,8 @@ const projects = [
   {
     title: "Incident Response Report Capstone",
     blurb:
-      "A lightweight Rust-based packet capture and inspection tool, built to sharpen my network and systems understanding while I study for Network+.",
-    role: "Personal Rust / Security Tooling",
+      "Capstone project for my Cyber Security Diploma from Lighthouse Labs. The project is split up between 3 different submissions required to pass. This repository showcases an Incident Response Report for a fictitious company.",
+    role: "Wireshark - MITRE ATT&CK - CrowdStrike - NIST",
     techStack: "Wireshark - MITRE ATT&CK - CrowdStrike - NIST",
     href: "https://github.com/josephdoba/IncidentResponseReport",
   },

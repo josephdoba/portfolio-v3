@@ -31,7 +31,7 @@ export default async function BlogLatest() {
   
   return (
   <div className="items-center justify-center font-sans">
-        <section className="bg-[var(--color-blue)]/5 flex-col items-center justify-between px-[10%] py-[3%]">
+        <section className="bg-[var(--color-blue)]/5 flex flex-col items-left px-[10%] sm:px-[20%] py-[3%]">
 
           <h1 className="text-3xl leading-1 tracking-tight font-sans underline decoration-[var(--color-blue)] pt-2 pb-6">
               Latest Blog

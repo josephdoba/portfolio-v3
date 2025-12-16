@@ -2,7 +2,7 @@ import HeroScene from "./HeroScene";
 
 export default function HeroBanner() {
   return (
-    <section className="relative w-full overflow-hidden pt-24 pb-16">
+    <section className="relative w-full overflow-hidden pt-22 pb-12">
       <div className="absolute inset-0 -z-10">
         <HeroScene/>
       </div>

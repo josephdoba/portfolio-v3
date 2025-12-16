@@ -11,7 +11,7 @@ export default function ContactPage() {
             </h1>
 
             <p className="text-[18px] font-mono leading-relaxed text-zinc-700">
-              Feel free to get in contact to tell me a bit about your business, project, goals or security concerns you have and what you are looking for. You can email me directly at: <strong className="underline decoration-[var(--color-orange-alt)]">josephdoba@gmail.com</strong>
+              I'd love to hear about your business, project, goals or security concerns, and how I can best support you. Feel free to email me directly at: <strong className="underline decoration-[var(--color-orange-alt)]">josephdoba@gmail.com</strong>
             </p>
 
               <ul className="mt-4 flex justify-center gap-6 sm:justify-start">

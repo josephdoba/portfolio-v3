@@ -49,6 +49,13 @@ export default function About() {
           </h2>
 
           <div className="flex flex-wrap gap-4 md:gap-6">
+            <a href="https://kanopyconsulting.ca/">
+              <div className="rounded-lg border border-zinc-200 bg-white/80 px-4 py-3 text-sm font-mono shadow-sm hover:shadow-lg transform opacity-100 hover:opacity-101 hover:scale-102 transition-all duration-150 ease-in-out">
+                
+                Kanopy Consulting
+              </div>
+            </a>
+            
             <a href="https://musicincommunities.com/">
               <div className="rounded-lg border border-zinc-200 bg-white/80 px-4 py-3 text-sm font-mono shadow-sm hover:shadow-lg transform opacity-100 hover:opacity-101 hover:scale-102 transition-all duration-150 ease-in-out">
                 
